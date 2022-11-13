@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esportal Autoaccept</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 250px;
+            height:150px;
+            font-size: 20px;
+            background-color:#393d48;
+            color: #ffffff;
+            padding: 15px;
+        }
+        .c { color: #ff3131; }
+        .g { color: #54d449; }
+
+        svg {
+        background: #393d48;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 240px;
+        top: 92px;
+        transform: translate(-50%, -50%);
+        }
+        circle {
+        fill: transparent;
+        stroke: green;
+
+        stroke-width: 2px;
+        stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+        animation: clock-animation 5s linear infinite;
+            transform: rotate(-90deg);
+        transform-origin: center;
+        }
+        @keyframes clock-animation {
+        0% {
+            stroke-dashoffset: 471;
+            stroke-dasharray: 150;
+        }
+        30% {
+            stroke-dashoffset: 100;
+            stroke-dasharray: 100;
+        } 
+            60% {
+                stroke-dasharray: 200;
+        }  
+            50% {
+        stroke-dashoffset: 0;  
+                    stroke-dasharray: 150;
+
+        }  
+        100% {
+            stroke-dashoffset: 471;
+        }
+        }
+    </style>
+</head>
+<body>
+    Esportal Auto Accept<br /><br />
+    <div id="enablePlug"></div><br />
+    <div id="blockTw"></div>
+</body>
+<script src="popup_script.js"></script>
+</html>
