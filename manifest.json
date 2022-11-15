@@ -28,9 +28,7 @@
         }
     },
     "permissions": [
-        "storage",
-        "activeTab",
-        "tabs"
+        "storage"
     ],
     "host_permissions": [
         "https://www.esportal.com/*",
