@@ -4,34 +4,41 @@ let enableButton = document.getElementById('enablePlug');
 let blockTwButton = document.getElementById('blockTw');
 
 let enableText = ` 
+<label for="enableCheckbox" class="container g">Auto accept is on
 <input  type="checkbox"
         id="enableCheckbox" 
         value="1" checked 
         />
-<label for="enableCheckbox" class="g">Auto accept is on <svg>
-<circle class="clock" cx="20" cy="20" r="10" />
-</svg></label><br /><br`;
+<span class="checkmark"></span>
+</label>
+<svg><circle class="clock" cx="20" cy="20" r="10" /></svg>`;
 
 let disableText = ` 
+<label for="enableCheckbox" class="container">Auto accept is off
 <input  type="checkbox"
         id="enableCheckbox" 
         value="0" 
         />
-<label for="enableCheckbox">Auto accept is off</label><br /><br`;
+<span class="checkmark"></span>
+</label>`;
 
 let blockTwOnText = ` 
+<label for="blockCheckbox" class="container c">Blocking twitch stream
 <input  type="checkbox"
         id="blockCheckbox" 
         value="1" checked 
         />
-<label for="blockCheckbox" class="c">Blocking twitch stream</label><br /><br`;
+<span class="checkmark"></span>
+</label>`;
 
 let blockTwOffText = ` 
+<label for="blockCheckbox" class="container">Block twitch stream
 <input  type="checkbox"
         id="blockCheckbox" 
         value="0" 
         />
-<label for="blockCheckbox">Block twitch stream</label><br /><br`;
+<span class="checkmark"></span>
+</label>`;
 
 chrome.storage.local.get('enabled', data => {
     enabled = data.enabled;

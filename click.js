@@ -2,9 +2,7 @@ let successRm = false;
 
 chrome.storage.local.get('enabled', data => {
     enabled = data.enabled;
-    if(enabled && typeof init === 'undefined') {
-        console.log("Script enable waiting for match!");  
-       
+    if(enabled) {
         function getButtonPath (path) {
             return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
         }
@@ -30,19 +28,20 @@ chrome.storage.local.get('blockTw', data => {
         function getStream() {
             streamElement = document.querySelector(".sc-jbwHOj");
             iframe = document.getElementById("rufous-sandbox");
-            if(streamElement !== null) {
+            if(streamElement !== null || iframe !== null) {
                 streamElement.style.display = "none";
                 iframe.style.display = "none";
                 successRm = true;
             }
         }
 
-        if(!successRm) {
-            setInterval(function() {
-                // removeTwitchStream();
+            let streamRefresh = setInterval(function() {
                 getStream();
+                if(successRm) {
+                    clearInterval(streamRefresh);
+                }
             }, 1000);
-        }
+        
 
     }
 });
