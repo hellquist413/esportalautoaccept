@@ -93,3 +93,8 @@ function reloadPage() {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.style.margin = '100px';
+    document.body.style.margin = '0px';
+  });
