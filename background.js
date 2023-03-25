@@ -17,9 +17,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             sendResponse({
                 message: 'success'
             });
-            chrome.tabs.query({url: "https://esportal.com/*"}, function(tab) {
-                chrome.tabs.reload(tab[0].id) 
-            })            
+            chrome.tabs.query({ url: "https://esportal.com/*" }, function (tab) {
+                chrome.tabs.reload(tab[0].id)
+            })
         });
         return true;
     }

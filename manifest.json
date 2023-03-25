@@ -14,8 +14,12 @@
     },
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
-            "js": ["click.js"]
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "click.js"
+            ]
         }
     ],
     "action": {
